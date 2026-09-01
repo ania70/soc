@@ -1,6 +1,6 @@
 # Constitution — the rules every AI on this project obeys
 
-These rules are the single source of truth for how work is done here. `CLAUDE.md` and `AGENTS.md` are short pointers to this folder — the content lives here so that **any** capable coding AI can pick this project up and continue it.
+These rules are the single source of truth for how work is done here. `CLAUDE.md`, `DEVIN.md` and `AGENTS.md` are short pointers to this folder — the content lives here so that **any** capable coding AI can pick this project up and continue it.
 
 Read this file, then `01-workflow.md`, then `02-tech-stack.md`. Then read `docs/status.md` to find out where the project stands.
 
@@ -21,18 +21,17 @@ Read this file, then `01-workflow.md`, then `02-tech-stack.md`. Then read `docs/
 
 ## Which AI does what
 
-The user has two assistants and they are not interchangeable. Respect the split; it exists to make a limited quota last two days.
+The project supports multiple AI assistants. The split of work is the same regardless of which one is running — what changes is only whether the user switches tools or sessions.
 
-| Work | Which assistant | Why |
+| Work | When | Why |
 |---|---|---|
-| Thinking — idea, PRD, data model, UX, design guidance, dependencies, scenarios, planning, reconciliation, iteration analysis, debugging | **Claude Code — Opus 5, effort high** | This is the judgement, and it is what the paid quota is for. |
-| Writing the product's code (`/build`) | **Claude Code — Sonnet 5, effort medium** | The thinking is already on disk; here throughput matters and it costs far less. |
-| The screens (`/design`) | **Claude on the web, Design, Opus, highest thinking** | A different tool entirely, in the browser. |
-| Installing things — on the laptop (`/setup-dev`) and on the server (`/deploy`) | **GitHub Copilot (free), in the same editor** | Mechanical, no product judgement, and it costs nothing. Tell the user to switch to the Copilot panel for these, and switch back afterwards. |
+| Thinking — idea, PRD, data model, UX, design guidance, dependencies, scenarios, planning, reconciliation, iteration analysis, debugging | The main session | This is the judgement work. |
+| Writing the product's code (`/build`) | A fresh session, after `/plan` | The thinking is already on disk; the build session gets a clean context window and reads only the handoff. |
+| The screens (`/design`) | An external design tool (Claude on the web, v0, Lovable, Figma, etc.) or in-editor prototyping | A different tool entirely, in the browser — or done directly if the user has no external tool. |
+| Installing things — on the laptop (`/setup-dev`) and on the server (`/deploy`) | The same session, or a separate one | Mechanical, no product judgement. |
 
-- The Claude switch happens once, at the `/plan` → `/build` boundary, and the user makes it: `/clear`, then `/model`, then `/effort`. Tell them all three, in that order.
-- If you can switch model yourself, do it silently. If not, tell the user the exact thing to type and wait. Do not print a model name you have not verified is available.
-- **If the user hits their five-hour limit, nothing is lost.** Say so, tell them the work is committed and `docs/status.md` is current, and give them the two real options: wait for the window to reset, or ask the organiser for a spare assistant. Never restart work from the beginning after a limit.
+- The session switch happens once, at the `/plan` → `/build` boundary. The user starts a fresh session so the build gets a clean context window. The plan is on disk, so the build needs none of the planning conversation.
+- **If the user hits a session or usage limit, nothing is lost.** Say so, tell them the work is committed and `docs/status.md` is current, and give them the two real options: wait for the limit to reset, or ask the organiser for a spare assistant. Never restart work from the beginning after a limit.
 
 ## Standing behaviors — these apply in every phase
 
@@ -60,7 +59,7 @@ The user has two assistants and they are not interchangeable. Respect the split;
 - **Open questions never block.** Always give a sensible recommended default. A blank answer means that default is accepted. Move resolved answers into `docs/decisions.md`.
 - **Keep `docs/status.md` current, always.** After every meaningful step, round, or floating command (like `/add-idea`) — update it: check off completed phase boxes `[x]`, record round counts, log floating events, note the current step and the single next step. This is the master hand-off file: if this session dies (usage limit, token reset, a closed laptop, a week between the two days), the next AI reads this one file and continues seamlessly. Assume you may be interrupted at any moment.
 - **Stop only on business doubt.** Never pause for a technical question — decide it yourself. Stop and ask only when the user might hold a different **business** preference.
-- **Token discipline.** The user is on a small paid plan and it has to last two days. Do the work directly in your own context. Do not spawn sub-agents. Do not re-read what you already know. Do not re-litigate settled decisions.
+- **Resource discipline.** Do the work directly in your own context. Do not spawn sub-agents. Do not re-read what you already know. Do not re-litigate settled decisions.
 
 ## The two days
 
@@ -100,7 +99,7 @@ Rules: numbers only go up, files are never rewritten after the round that produc
 
 ## Build protocol — lean by design
 
-- **Planning and building are separate.** `/plan` (Opus, high effort) writes `docs/living/architecture.md`, the version's `checklist.md`, and `docs/versions/<v>/handoff.md`. `/build` (Sonnet, medium effort) reads those three and executes. The user clears the session in between. **`handoff.md` and `checklist.md` are fixed names at fixed paths** — that is the whole interface between the two, and it is why the second session needs none of the first one's conversation.
+- **Planning and building are separate.** `/plan` writes `docs/living/architecture.md`, the version's `checklist.md`, and `docs/versions/<v>/handoff.md`. `/build` reads those three and executes. The user starts a fresh session in between. **`handoff.md` and `checklist.md` are fixed names at fixed paths** — that is the whole interface between the two, and it is why the second session needs none of the first one's conversation.
 - **`/build` executes; it does not redesign.** If the plan is silent, make the smallest choice consistent with what is written, or raise a **business** question in a new `docs/versions/<v>/NN-questions.md` and continue with independent items. Never substitute a different architecture.
 - **No sub-agents, ever.** No architect / developer / reviewer ceremony. A previous workshop showed it burns the weekly usage limit and the day.
 - Implement the checklist **one item at a time**: code it, tick the box, commit that one item, update `docs/status.md`, move on.

@@ -4,13 +4,13 @@ CODO is a starter **folder** for building a real web MVP with AI, across two wor
 
 ## What is in here, and what is deliberately not
 
-CODO ships **fifteen command files in `.claude/commands/` and a constitution in `docs/constitution/`. Nothing else.** No sub-agents, no skills, no framework, no vendored tooling. That is a decision: everything an AI needs is plain markdown that any model can read, which keeps the project portable and the token cost honest. `CLAUDE.md` and `AGENTS.md` are the two entry points; they point at the same constitution.
+CODO ships **fifteen command files in `.claude/commands/` (for Claude Code) and `.devin/workflows/` (for Devin), and a constitution in `docs/constitution/`. Nothing else.** No sub-agents, no skills, no framework, no vendored tooling. That is a decision: everything an AI needs is plain markdown that any model can read, which keeps the project portable and the token cost honest. `CLAUDE.md`, `DEVIN.md` and `AGENTS.md` are the three entry points; they point at the same constitution.
 
 ## How you use it
 
 1. Unzip CODO on your own computer, rename the folder to your project's name, and open it in VS Code.
 2. Publish it to your own GitHub account as a **private** repository (one button in the Source Control panel).
-3. Run **`/start`** in the Claude panel, and then follow the phase the assistant proposes after each step. You rarely need to look anything up; it tells you what to type next.
+3. Run **`/start`** in the Claude panel (or Devin), and then follow the phase the assistant proposes after each step. You rarely need to look anything up; it tells you what to type next.
 
 **Day one — the documents:**
 

@@ -12,10 +12,10 @@ You may not be Claude Code. This project is designed so that **any** capable cod
 
 **Phase & utility commands.** The user drives the project with short commands. Day one: `/start` · `/idea-core` · `/prd` · `/data-model` · `/ux` · `/design`. Day two: `/reconcile` · `/deps` · `/scenarios` · `/plan` · `/setup-dev` · `/build` · `/deploy` · `/test`, then `/iterate`. Plus the floating command `/add-idea` (to bank new ideas into `docs/living/roadmap.md` without disrupting the active phase).
 
-All sixteen command files live under `.claude/commands/<name>.md`. When the user types `/xyz` or mentions a phase: **open `.claude/commands/xyz.md`, read it fully, and follow it** — the files work as ordinary prompts. If your environment or toolchain expects prompts in a different folder (e.g. `.cursor/rules/`, `.roo/prompts/`, etc.), you may copy (`cp`) them into whichever directory you like.
+All sixteen command files live under `.claude/commands/<name>.md` (for Claude Code) and `.devin/workflows/<name>.md` (for Devin). When the user types `/xyz` or mentions a phase: **open the matching file for your environment, read it fully, and follow it** — the files work as ordinary prompts. If your environment or toolchain expects prompts in a different folder (e.g. `.cursor/rules/`, `.roo/prompts/`, etc.), you may copy (`cp`) them into whichever directory you like.
 
 You will most often be asked to do the mechanical half of this project: installing the toolchain at `/setup-dev` and installing things on the server at `/deploy`. Both of those command files are written for you. Do not take over the product thinking; that runs on a different assistant, and its output is already on disk.
 
 CODO ships these command files and the constitution — **no sub-agents, no skills, no framework.** Everything you need is plain markdown, on purpose, so that any model can follow it. Do not add tooling. Never mention an internal tool name to the user; speak to a non-technical founder in plain language.
 
-`CLAUDE.md` is the same entry point for Claude Code; keep the two files consistent if you ever edit them.
+`CLAUDE.md` is the same entry point for Claude Code; `DEVIN.md` is the same for Devin. Keep the files consistent if you ever edit them.

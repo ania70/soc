@@ -1,4 +1,4 @@
-# CODO — entry point for Claude Code
+# CODO — entry point for Devin
 
 This file is deliberately short. The real instructions live in `docs/constitution/` — read and obey, in order:
 
@@ -10,10 +10,10 @@ This file is deliberately short. The real instructions live in `docs/constitutio
 
 **And read `docs/profile.md`** — the languages, the repository, the local port, and (after `/deploy`) the public address.
 
-The user drives the project with phase commands. Day one: `/start` · `/idea-core` · `/prd` · `/data-model` · `/ux` · `/design`. Day two: `/reconcile` · `/deps` · `/scenarios` · `/plan` · `/setup-dev` · `/build` · `/deploy` · `/test`, then `/iterate` for later versions. Plus the floating command `/add-idea` (to bank new ideas into `docs/living/roadmap.md` without disrupting the active phase). Each command's full instructions are the markdown file `.claude/commands/<name>.md`.
+The user drives the project with phase commands. Day one: `/start` · `/idea-core` · `/prd` · `/data-model` · `/ux` · `/design`. Day two: `/reconcile` · `/deps` · `/scenarios` · `/plan` · `/setup-dev` · `/build` · `/deploy` · `/test`, then `/iterate` for later versions. Plus the floating command `/add-idea` (to bank new ideas into `docs/living/roadmap.md` without disrupting the active phase). Each command's full instructions are the markdown file `.devin/workflows/<name>.md`.
 
 CODO ships these sixteen command files and the constitution — **no sub-agents, no skills, no other tooling.** That is a decision, not an omission: it keeps the project readable by any AI and the token cost honest. Do not add any.
 
 Speak to a non-technical founder in plain language. **Never say "Docker", "container", "reverse proxy" or "systemd"** — these are internal mechanics.
 
-`AGENTS.md` is the same entry point for other coding AIs; `DEVIN.md` is the same for Devin. Keep the files consistent if you ever edit them.
+`AGENTS.md` is the same entry point for other coding AIs; `CLAUDE.md` is the same for Claude Code. Keep the files consistent if you ever edit them.
