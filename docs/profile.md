@@ -6,12 +6,12 @@
 
 | کلید | مقدار |
 |---|---|
-| زبانِ گفت‌وگو — conversation | |
-| زبانِ مستندات — documents | |
-| نامِ پروژه — project | |
-| انبارِ کد — repo | |
-| پورتِ محلی — local port | 8000 |
-| آدرسِ محلی — local address | http://localhost:8000 |
+| زبانِ گفت‌وگو — conversation | English |
+| زبانِ مستندات — documents | فارسی |
+| نامِ پروژه — project | codo |
+| انبارِ کد — repo | git@git.kubit.dev:eitala/alaj/lab/soc.git |
+| پورتِ محلی — local port | 8001 |
+| آدرسِ محلی — local address | http://localhost:8001 |
 | روشِ استقرار — deploy method | <!-- پیش‌فرض / سفارشی — در /deploy تعیین می‌شود --> |
 | آدرسِ عمومیِ محصول — public address | <!-- بعد از /deploy پر می‌شود --> |
 
