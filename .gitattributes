@@ -1,0 +1,4 @@
+# The documents are edited on Windows and the code runs on Linux. Without this, a shell
+# script saved on Windows fails on the server with the baffling error `\r: command not found`.
+* text=auto eol=lf
+*.sh text eol=lf

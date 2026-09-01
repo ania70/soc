@@ -1,0 +1,12 @@
+{
+  "//": "CODO — shipped so the workshop laptop behaves the same for everyone. Change anything you like; it only applies to this folder.",
+
+  "git.postCommitCommand": "sync",
+  "git.enableSmartCommit": true,
+  "git.useEditorAsCommitInput": false,
+  "git.confirmSync": false,
+  "git.autofetch": false,
+
+  "terminal.integrated.gpuAcceleration": "off",
+  "workbench.colorTheme": "Solarized Light"
+}

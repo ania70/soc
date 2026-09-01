@@ -1,0 +1,47 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+secrets/*.local.md
+!secrets/*.example
+!secrets/README.md
+
+# Local data
+data/
+uploads/
+run.log
+.run.pid
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Tests / coverage
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Editor / OS
+.obsidian/
+.DS_Store
+Thumbs.db
+*.log
+
+# Existing product temporary & build artifacts
+existing_product/**/node_modules/
+existing_product/**/venv/
+existing_product/**/.venv/
+existing_product/**/__pycache__/
+existing_product/**/.git/
+existing_product/**/dist/
+existing_product/**/*.sqlite3
+
