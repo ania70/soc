@@ -5,8 +5,8 @@ image:
   tag: "latest"
   pullPolicy: IfNotPresent
 
-imagePullSecrets: []
-# - name: ghcr-secret
+imagePullSecrets:
+  - name: ghcr-secret
 
 service:
   type: ClusterIP
