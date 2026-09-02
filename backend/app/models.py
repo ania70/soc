@@ -11,7 +11,7 @@ class Base(DeclarativeBase):
 class Event(Base):
     __tablename__ = "events"
 
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(BigInteger().with_variant(Integer, "sqlite"), primary_key=True, autoincrement=True)
     syscall_type: Mapped[str] = mapped_column(String(16), nullable=False)
     timestamp: Mapped[datetime] = mapped_column(DateTime, nullable=False, index=True)
     pid: Mapped[int] = mapped_column(Integer, nullable=False)

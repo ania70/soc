@@ -18,7 +18,7 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     op.create_table(
         "events",
-        sa.Column("id", sa.BigInteger(), autoincrement=True, nullable=False),
+        sa.Column("id", sa.Integer(), autoincrement=True, nullable=False),
         sa.Column("syscall_type", sa.String(16), nullable=False),
         sa.Column("timestamp", sa.DateTime(), nullable=False),
         sa.Column("pid", sa.Integer(), nullable=False),

@@ -314,6 +314,15 @@ async def mock_generator_task():
                 args=ev.args,
             )
             db.add(event)
+            # upsert node
+            result = await db.execute(select(Node).where(Node.node_name == node))
+            existing_node = result.scalar_one_or_none()
+            now = datetime.now(timezone.utc)
+            if existing_node:
+                existing_node.probe_status = "active"
+                existing_node.last_report = now
+            else:
+                db.add(Node(node_name=node, ip_address=f"10.0.0.{random.randint(1,99)}", probe_status="active", last_report=now))
             await db.commit()
             await db.refresh(event)
             await manager.broadcast({
