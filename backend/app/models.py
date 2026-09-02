@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from sqlalchemy import BigInteger, Integer, String, Text, DateTime, Index
+from sqlalchemy import BigInteger, Integer, String, Text, DateTime
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -21,11 +21,6 @@ class Event(Base):
     namespace: Mapped[str | None] = mapped_column(String(256), nullable=True)
     container_id: Mapped[str | None] = mapped_column(String(64), nullable=True)
     args: Mapped[str] = mapped_column(Text, nullable=False)
-
-    __table_args__ = (
-        Index("ix_events_timestamp", "timestamp"),
-        Index("ix_events_node_name", "node_name"),
-    )
 
 
 class User(Base):
