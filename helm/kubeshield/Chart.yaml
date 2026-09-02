@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kubeshield
+description: Helm chart for KubeShield — Kubernetes syscall monitoring dashboard
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

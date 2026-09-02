@@ -1,0 +1,67 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/eitala/alaaj/lab/soc
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+# - name: ghcr-secret
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8001
+
+ingress:
+  enabled: false
+  className: nginx
+  host: ""
+  tls:
+    enabled: false
+
+env:
+  - name: APP_PORT
+    value: "8001"
+  - name: DATABASE_URL
+    value: "sqlite+aiosqlite:////app/data/app.db"
+  - name: MOCK_EVENTS
+    value: "true"
+  - name: EVENT_RETENTION_HOURS
+    value: "24"
+
+# Sensitive env vars — must come from Kubernetes Secrets
+# The workshop admin must create these secrets:
+#   kubectl create secret generic kubeshield-secrets \
+#     --namespace kubeshield \
+#     --from-literal=SECRET_KEY=... \
+#     --from-literal=ADMIN_USER=admin \
+#     --from-literal=ADMIN_PASSWORD=... \
+#     --from-literal=PROBE_API_KEY=...
+secretEnv:
+  - name: SECRET_KEY
+    secretRef: kubeshield-secrets
+    key: SECRET_KEY
+  - name: ADMIN_USER
+    secretRef: kubeshield-secrets
+    key: ADMIN_USER
+  - name: ADMIN_PASSWORD
+    secretRef: kubeshield-secrets
+    key: ADMIN_PASSWORD
+  - name: PROBE_API_KEY
+    secretRef: kubeshield-secrets
+    key: PROBE_API_KEY
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+volumes:
+  data:
+    enabled: true
+    size: 1Gi
+    storageClass: ""

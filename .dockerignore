@@ -1,0 +1,17 @@
+.git
+.github
+.gitignore
+*.md
+docs/
+secrets/
+data/
+*.db
+*.log
+run.log
+.run.pid
+.venv
+node_modules
+__pycache__
+*.pyc
+.pytest_cache
+.env

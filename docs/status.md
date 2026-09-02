@@ -36,8 +36,8 @@
 <!-- هر دستور شناور مانند /add-idea با گام جاری ثبت می‌شود -->
 
 ## وضعیت جاری و قدمِ بعدی (Hand-off State)
-- **مرحلهٔ فعال:** `/build` (تکمیل شد)
-- **همین حالا در دستِ کار:** ساخت تمام شد — همهٔ ۳۲ آیتمِ چک‌لیست انجام شد. بک‌اند (FastAPI + SQLAlchemy + Alembic + JWT + WebSocket + mock events)، فرانت‌اند (React 19 + Vite + Tailwind + Zustand + TanStack Query)، پروب (Go mock mode)، و DaemonSet آماده است. ۱۰ تست pytest همه پاس شدند. سناریوهای ۱-۱۵ با API تأیید شدند. اپ روی `http://localhost:8001` با `./run.sh` کار می‌کند.
-- **قدمِ بعدیِ دستیار:** شروعِ `/deploy` یا `/test` — بنیان‌گذار باید سناریوها را در مرورگر_walk کند
-- **مانع‌ها / منتظرِ چه چیزی:** سناریوهای ۱۶-۱۷ نیاز به کلاسترِ واقعی کوبرنتیز با eBPF دارند (روی macOS ممکن نیست)
-- **چیزها کجا هستند:** پوشهٔ نسخهٔ جاری `docs/versions/0.1/`، PRD در `docs/living/prd.md`، مدلِ داده در `docs/living/data-model.md`، UX در `docs/living/ux.md`، UI در `UI/`، وابستگی‌ها در `docs/living/dependencies.md`، سناریوها در `docs/living/test-scenarios.md`، معماری در `docs/living/architecture.md`، چک‌لیست در `docs/versions/0.1/checklist.md`، هندآف در `docs/versions/0.1/handoff.md`، رمزها در `secrets/secrets.local.md`، پورت ۸۰۰۱ در `.env`
+- **مرحلهٔ فعال:** `/deploy` (در حال اجرا)
+- **همین حالا در دستِ کار:** فایل‌های استقرار ساخته شد — Dockerfile (multi-stage، تست‌شده)، Helm chart (lint و template تأیید شد)، GitHub Actions workflow، .dockerignore. ایمیج Docker با موفقیت build و run شد. نیاز به تنظیم GitHub Secret به نام `KUBE_CONFIG` و ساخت Kubernetes Secret به نام `kubeshield-secrets` در کلاستر.
+- **قدمِ بعدیِ دستیار:** گردانندهٔ کارگاه باید `KUBE_CONFIG` را در GitHub Secrets تنظیم کند و Kubernetes Secretها را در کلاستر بسازد. بعد از push به main، GitHub Actions ایمیج را build و deploy می‌کند. آدرسِ عمومی پس از deploy در profile ثبت می‌شود.
+- **مانع‌ها / منتظرِ چه چیزی:** نیاز به دسترسی به GitHub repo (فعلاً repo روی git.kubit.dev است) و کلاسترِ کوبرنتیز با KUBE_CONFIG
+- **چیزها کجا هستند:** پوشهٔ نسخهٔ جاری `docs/versions/0.1/`، PRD در `docs/living/prd.md`، مدلِ داده در `docs/living/data-model.md`، UX در `docs/living/ux.md`، UI در `UI/`، وابستگی‌ها در `docs/living/dependencies.md`، سناریوها در `docs/living/test-scenarios.md`، معماری در `docs/living/architecture.md`، چک‌لیست در `docs/versions/0.1/checklist.md`، هندآف در `docs/versions/0.1/handoff.md`، رمزها در `secrets/secrets.local.md`، پورت ۸۰۰۱ در `.env`، راهنمای استقرار در `docs/deploy.md`

@@ -12,7 +12,7 @@
 | انبارِ کد — repo | git@git.kubit.dev:eitala/alaj/lab/soc.git |
 | پورتِ محلی — local port | 8001 |
 | آدرسِ محلی — local address | http://localhost:8001 |
-| روشِ استقرار — deploy method | <!-- پیش‌فرض / سفارشی — در /deploy تعیین می‌شود --> |
+| روشِ استقرار — deploy method | سفارشی (Helm + GHCR + GitHub Actions) |
 | آدرسِ عمومیِ محصول — public address | <!-- بعد از /deploy پر می‌شود --> |
 
 > پورت هیچ‌جا از قبل تعیین نشده است. پیش‌فرض `8000` است و اگر روی این کامپیوتر اشغال بود، دستیار اولین پورتِ آزاد را برمی‌دارد و همین‌جا و در `.env` می‌نویسد.
