@@ -49,7 +49,7 @@ jobs:
             ./helm/kubeshield \
             --namespace kubeshield \
             --create-namespace \
-            --set image.repository=ghcr-io.docker.kubit.dev/${{ github.repository }} \
+            --set image.repository=ghcr.io/${{ github.repository }} \
             --set image.tag=${{ github.sha }} \
             --wait \
             --timeout 5m
