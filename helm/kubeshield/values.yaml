@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/eitala/alaaj/lab/soc
+  repository: ghcr.io/ania70/soc
   tag: "latest"
   pullPolicy: IfNotPresent
 
@@ -14,9 +14,9 @@ service:
   targetPort: 8001
 
 ingress:
-  enabled: false
+  enabled: true
   className: nginx
-  host: ""
+  host: kubeshield.thetaban.com
   tls:
     enabled: false
 
