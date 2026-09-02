@@ -25,7 +25,7 @@
 - [x] `/reconcile` — تطبیق و هم‌راستاسازی اسناد پس از یک هفته (دورها: ۰)
 - [x] `/deps` — آماده‌سازی سرویس‌ها و ثبت رمزها در secrets.local.md
 - [x] `/scenarios` — سناریوهای تست قبولی (دورها: ۰)
-- [ ] `/plan` — معماری، چک‌لیست ساخت و هندآف
+- [x] `/plan` — معماری، چک‌لیست ساخت و هندآف
 - [ ] `/setup-dev` — نصب و تأیید ابزارهای توسعه روی سیستم
 - [ ] `/build` — کدنویسی، ساخت برنامه و پاس شدن تست‌ها در لوکال
 - [ ] `/deploy` — انتشار عمومی روی اینترنت و تأیید آدرس زنده
@@ -36,8 +36,8 @@
 <!-- هر دستور شناور مانند /add-idea با گام جاری ثبت می‌شود -->
 
 ## وضعیت جاری و قدمِ بعدی (Hand-off State)
-- **مرحلهٔ فعال:** `/plan`
-- **همین حالا در دستِ کار:** `/scenarios` تکمیل شد — ۱۷ سناریو در ۵ گروه نوشته شد
-- **قدمِ بعدیِ دستیار:** شروعِ `/plan` — معماری، چک‌لیستِ ساخت و هندآف
+- **مرحلهٔ فعال:** `/setup-dev`
+- **همین حالا در دستِ کار:** `/plan` تکمیل شد — معماری، چک‌لیست (۳۲ آیتم) و هندآف نوشته شد
+- **قدمِ بعدیِ دستیار:** شروعِ `/setup-dev` — نصبِ ابزارهای توسعه روی کامپیوتر
 - **مانع‌ها / منتظرِ چه چیزی:** هیچ
-- **چیزها کجا هستند:** پوشهٔ نسخهٔ جاری `docs/versions/0.1/`، PRD در `docs/living/prd.md`، مدلِ داده در `docs/living/data-model.md`، UX در `docs/living/ux.md`، UI در `UI/`، وابستگی‌ها در `docs/living/dependencies.md`، سناریوها در `docs/living/test-scenarios.md`، رمزها در `secrets/secrets.local.md`، پورت ۸۰۰۱ در `.env`
+- **چیزها کجا هستند:** پوشهٔ نسخهٔ جاری `docs/versions/0.1/`، PRD در `docs/living/prd.md`، مدلِ داده در `docs/living/data-model.md`، UX در `docs/living/ux.md`، UI در `UI/`، وابستگی‌ها در `docs/living/dependencies.md`، سناریوها در `docs/living/test-scenarios.md`، معماری در `docs/living/architecture.md`، چک‌لیست در `docs/versions/0.1/checklist.md`، هندآف در `docs/versions/0.1/handoff.md`، رمزها در `secrets/secrets.local.md`، پورت ۸۰۰۱ در `.env`
