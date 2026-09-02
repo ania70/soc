@@ -30,7 +30,7 @@
 - [x] 26 — Frontend: dark theme matching UI/ prototype — colors, fonts, badges, layout · done when: visual review matches `UI/index.html` prototype · after: 27
 - [x] 27 — Integration: `run.sh` builds frontend, runs migrations, starts server on port 8001 · done when: `./run.sh` produces a working app at `http://localhost:8001` · after: 28
 - [x] 28 — Backend tests: pytest for auth, events CRUD, nodes, pagination, cleanup · done when: `pytest` passes all tests · after: 29
-- [ ] 29 — Walk scenarios 1-15 against `http://localhost:8001` with `MOCK_EVENTS=true` · done when: all 15 scenarios pass · after: 30
-- [ ] 30 — Probe: Go eBPF agent — ring buffer reader, three tracepoint hooks, pod info extraction, HTTP sender · done when: probe compiles and sends events to dashboard on Linux · after: 31
-- [ ] 31 — Probe: K8s DaemonSet manifest with --privileged, volume mounts, env vars · done when: `kubectl apply -f deploy/` runs probe on all nodes · after: 32
+- [x] 29 — Walk scenarios 1-15 against `http://localhost:8001` with `MOCK_EVENTS=true` · done when: all 15 scenarios pass · after: 30
+- [x] 30 — Probe: Go eBPF agent — ring buffer reader, three tracepoint hooks, pod info extraction, HTTP sender · done when: probe compiles and sends events to dashboard on Linux · after: 31
+- [x] 31 — Probe: K8s DaemonSet manifest with --privileged, volume mounts, env vars · done when: `kubectl apply -f deploy/` runs probe on all nodes · after: 32
 - [ ] 32 — Walk scenarios 16-17 against real cluster with real probe · done when: real syscall events appear in dashboard; old events are cleaned up · after: none
